@@ -3,22 +3,29 @@ const searchField = document.getElementById('search-field');
 const bookContainer = document.getElementById('book-container');
 const bookFoundNumber = document.getElementById('book-number');
 const errorMessage = document.getElementById('error-message');
+const spinner = document.getElementById('spinner');
 
 // show error message 
 const showError = (message) => {
     errorMessage.innerText = `${message}`;
+    bookFoundNumber.innerText = '';
+    spinner.classList.add('d-none')
 }
 
 
 // load data
 const loadData = async () => {
     const searchText = searchField.value;
+    // spinner
+    spinner.classList.remove('d-none');
+    errorMessage.innerText = '';
+    // clear container
+    bookContainer.innerHTML = '';
     // error handle for empty search field
     if (searchField.value === '') {
         showError('⚠️ Please search by book name to show results.');
         bookFoundNumber.innerText = '';
     } else {
-
         // fetch data
         const url = `https://openlibrary.org/search.json?q=${searchText}`;
         const res = await fetch(url);
@@ -27,11 +34,12 @@ const loadData = async () => {
         searchField.value = '';
         if (data.numFound === 0) {
             showError('⚠️ No result found. PLease try again.');
-
         } else {
             // call function
             bookContainer.innerHTML = '';
             showError('');
+            // spinner
+            spinner.classList.add('d-none')
             getBooks(data.docs);
         }
     }
@@ -39,11 +47,10 @@ const loadData = async () => {
 };
 // get all books by search
 const getBooks = books => {
-    // console.log(books);
+    console.log(books);
     bookFoundNumber.innerText = `${books.length} Search result found.`;
     // loop through array
     books.forEach(book => {
-
         showBooks(book)
     });
 };
@@ -51,7 +58,6 @@ const getBooks = books => {
 // show books 
 
 const showBooks = book => {
-
     const bookCard = document.createElement('div');
     bookCard.classList.add('col');
     // cover image 
