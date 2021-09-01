@@ -1,0 +1,14 @@
+/* google font  */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,500&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* style */
+.section-title {
+  color: #0a3d62;
+}
+.result {
+  color: #079992;
+}
