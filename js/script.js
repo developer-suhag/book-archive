@@ -20,7 +20,7 @@ const loadData = async () => {
     } else {
 
         // fetch data
-        const url = `http://openlibrary.org/search.json?q=${searchText}`;
+        const url = `https://openlibrary.org/search.json?q=${searchText}`;
         const res = await fetch(url);
         const data = await res.json();
         // clear search field 
@@ -55,10 +55,10 @@ const showBooks = book => {
     const bookCard = document.createElement('div');
     bookCard.classList.add('col');
     // cover image 
-    const imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
+    const imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
     bookCard.innerHTML = `
         <div class="card h-100">
-            <img src="${imgUrl}" class="card-img-top" alt="..." />
+            <img src="${imgUrl}" class="card-img-top image-top" alt="..." />
             <div class="card-body">
                 <h3 class="card-title">${book.title}</h3>
                 <h5>Author: ${book.author_alternative_name}</h5>
@@ -70,9 +70,7 @@ const showBooks = book => {
                     longer.
                 </p>
             </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
+            
         </div>
     `;
     bookContainer.appendChild(bookCard);
