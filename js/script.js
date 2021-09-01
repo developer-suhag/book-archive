@@ -61,8 +61,8 @@ const showBooks = book => {
             <img src="${imgUrl ? imgUrl : ''}" class="card-img-top image-top" alt="..." />
             <div class="card-body">
                 <h3 class="card-title">${book.title}</h3>
-                <h5>Author: ${book.author_alternative_name ? book.author_alternative_name : ''}</h5>
-                <h5>Publishar: ${book.publisher ? book.publisher: ''}</h5>
+                <h5>Author: ${book.author_name[0] ? book.author_name[0] : ''}</h5>
+                <h5>Publishar: ${book.publisher[0] ? book.publisher[0] : ''}</h5>
                 <p>First publication: ${book.first_publish_year ? book.first_publish_year: ''}</p>
                 <p class="card-text">
                     This is a wider card with supporting text below as a natural
