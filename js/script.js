@@ -58,12 +58,12 @@ const showBooks = book => {
     const imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
     bookCard.innerHTML = `
         <div class="card h-100">
-            <img src="${imgUrl}" class="card-img-top image-top" alt="..." />
+            <img src="${imgUrl ? imgUrl : ''}" class="card-img-top image-top" alt="..." />
             <div class="card-body">
                 <h3 class="card-title">${book.title}</h3>
-                <h5>Author: ${book.author_alternative_name}</h5>
-                <h5>Publishar: ${book.publisher}</h5>
-                <p>First publication: ${book.first_publish_year}</p>
+                <h5>Author: ${book.author_alternative_name ? book.author_alternative_name : ''}</h5>
+                <h5>Publishar: ${book.publisher ? book.publisher: ''}</h5>
+                <p>First publication: ${book.first_publish_year ? book.first_publish_year: ''}</p>
                 <p class="card-text">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
