@@ -51,12 +51,14 @@ const getBooks = books => {
 // show books 
 
 const showBooks = book => {
-    // console.log(book.title);
+
     const bookCard = document.createElement('div');
     bookCard.classList.add('col');
+    // cover image 
+    const imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
     bookCard.innerHTML = `
         <div class="card h-100">
-            <img src="..." class="card-img-top" alt="..." />
+            <img src="${imgUrl}" class="card-img-top" alt="..." />
             <div class="card-body">
                 <h3 class="card-title">${book.title}</h3>
                 <h5>Author: ${book.author_alternative_name}</h5>
