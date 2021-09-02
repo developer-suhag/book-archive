@@ -81,9 +81,9 @@ const showBooks = book => {
         <div class="card book-card shadow-lg">
             <img src="${imgUrl ? imgUrl : ''}" class="card-img-top image-top" alt="..." />
             <div class="card-body">
-                <h3 class="card-title">${book.title.slice(0, 100)}</h3>
-                <h5>Author: ${book.author_name ? book.author_name[0] : ''}</h5>
-                <h5>Publishar: ${book.publisher ? book.publisher[0] : ''}</h5>
+                <h3 class="card-title book-title fw-bold">${book.title.slice(0, 100)}</h3>
+                <h5 class="author-name">Author: ${book.author_name ? book.author_name[0] : ''}</h5>
+                <h5 class="publishar">Publishar: ${book.publisher ? book.publisher[0] : ''}</h5>
             </div>
             <div class="card-footer border-0">
             <p class="text-muted">First publication: ${book.first_publish_year ? book.first_publish_year: ''}</p>

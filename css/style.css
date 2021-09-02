@@ -19,3 +19,13 @@ body {
 .image-top {
   height: 50%;
 }
+
+.book-title {
+  color: #2c3e50;
+}
+.author-name {
+  color: #1289a7;
+}
+.publishar {
+  color: #1e272e;
+}
