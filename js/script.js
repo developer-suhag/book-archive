@@ -16,7 +16,6 @@ const showError = (message) => {
     spinner.classList.add('d-none')
 }
 
-
 // load data
 const loadData = async () => {
     const searchText = searchField.value;
@@ -70,13 +69,11 @@ const getBooks = books => {
 };
 
 // show books 
-
 const showBooks = book => {
-    // console.log(book);
     const bookCard = document.createElement('div');
     bookCard.classList.add('col');
     // cover image 
-    const imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+    const imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
     bookCard.innerHTML = `
         <div class="card book-card shadow-lg">
             <img src="${imgUrl ? imgUrl : ''}" class="card-img-top image-top" alt="..." />
@@ -86,9 +83,9 @@ const showBooks = book => {
                 <h5 class="publishar">Publishar: ${book.publisher ? book.publisher[0] : ''}</h5>
             </div>
             <div class="card-footer border-0">
-            <p class="text-muted">First publication: ${book.first_publish_year ? book.first_publish_year: ''}</p>
+            <p class="text-muted text-center">First publication:  ${book.first_publish_year ? book.first_publish_year: ''}</p>
             </div>
         </div>
     `;
     bookContainer.appendChild(bookCard);
-}
+};
