@@ -63,7 +63,7 @@ const loadData = async () => {
 // get all books by search
 const getBooks = books => {
     // loop through array
-    books.forEach(book => {
+    books.slice(0, 30).forEach(book => {
         showBooks(book)
     });
 };
