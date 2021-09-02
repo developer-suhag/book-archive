@@ -78,20 +78,16 @@ const showBooks = book => {
     // cover image 
     const imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
     bookCard.innerHTML = `
-        <div class="card h-100">
+        <div class="card book-card shadow-lg">
             <img src="${imgUrl ? imgUrl : ''}" class="card-img-top image-top" alt="..." />
             <div class="card-body">
-                <h3 class="card-title">${book.title}</h3>
+                <h3 class="card-title">${book.title.slice(0, 100)}</h3>
                 <h5>Author: ${book.author_name ? book.author_name[0] : ''}</h5>
                 <h5>Publishar: ${book.publisher ? book.publisher[0] : ''}</h5>
-                <p>First publication: ${book.first_publish_year ? book.first_publish_year: ''}</p>
-                <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                </p>
             </div>
-            
+            <div class="card-footer border-0">
+            <p class="text-muted">First publication: ${book.first_publish_year ? book.first_publish_year: ''}</p>
+            </div>
         </div>
     `;
     bookContainer.appendChild(bookCard);

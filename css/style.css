@@ -12,6 +12,10 @@ body {
 .result {
   color: #079992;
 }
+.book-card {
+  height: 700px;
+}
+
 .image-top {
   height: 50%;
 }
